@@ -14,7 +14,9 @@ def data_parallel_workaround(model, *input):
     inputs = torch.nn.parallel.scatter(input, device_ids)
     # inputs.shape = (num_gpus, num_args, batch/num_gpus, ...)
     replicas = replicas[:len(inputs)]
+    print("START")
     outputs = torch.nn.parallel.parallel_apply(replicas, inputs)
+    print("END")
     y_hat = torch.nn.parallel.gather(outputs, output_device)
     _output_ref = outputs
     _replicas_ref = replicas

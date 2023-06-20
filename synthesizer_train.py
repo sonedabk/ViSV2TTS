@@ -2,6 +2,10 @@ from synthesizer.hparams import hparams
 from synthesizer.train import train
 from utils.argutils import print_args
 import argparse
+import os
+
+# Train single gpu
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 
 if __name__ == "__main__":
