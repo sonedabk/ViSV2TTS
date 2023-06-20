@@ -109,7 +109,7 @@ def train(run_id: str, syn_dir: str, models_dir: str, save_every: int,
     # Initialize the dataset
     metadata_fpath = syn_dir.joinpath("train.txt")
     mel_dir = syn_dir.joinpath("mels")
-    embed_dir = syn_dir.joinpath("embeds")
+    embed_dir = Path("/home/edabk/sonhoang/Embbed_Audio/embed_new")
     dataset = SynthesizerDataset(metadata_fpath, mel_dir, embed_dir, hparams)
 
     test_loader = DataLoader(dataset,

@@ -58,7 +58,7 @@ def run_synthesis(in_dir, out_dir, model_dir, hparams):
     in_dir = Path(in_dir)
     metadata_fpath = in_dir.joinpath("train.txt")
     mel_dir = in_dir.joinpath("mels")
-    embed_dir = in_dir.joinpath("embeds")
+    embed_dir = Path("/home/edabk/sonhoang/Embbed_Audio/embed_new")
 
     dataset = SynthesizerDataset(metadata_fpath, mel_dir, embed_dir, hparams)
     data_loader = DataLoader(dataset,
