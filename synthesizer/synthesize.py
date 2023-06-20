@@ -5,6 +5,7 @@ from synthesizer.synthesizer_dataset import SynthesizerDataset, collate_synthesi
 from synthesizer.models.tacotron import Tacotron
 from synthesizer.utils.vitext import text_to_sequence
 from synthesizer.utils.symbols import symbols
+from synthesizer.utils import data_parallel_workaround
 import numpy as np
 from pathlib import Path
 from tqdm import tqdm
